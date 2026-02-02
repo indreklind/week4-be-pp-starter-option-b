@@ -16,9 +16,16 @@ const addOne = (name, email, password, phone_number, gender, date_of_birth, memb
    return newUser;
 };
 
-
+const findById = (id) => {
+    const user = userArray.find((user) => user.id === number(id));
+    if (user) {
+        return user;
+    } else return false;
+} 
 
 module.exports = {
     getAll,
+    addOne,
+    findById,
 };
 
