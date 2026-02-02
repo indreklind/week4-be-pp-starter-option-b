@@ -3,6 +3,7 @@ const app = express();
 
 const tourRouter = require('./routes/tourRouter');
 
+const userRouter = require('./routes/userRouter');
 
 const {
   getAllTours,
@@ -15,6 +16,10 @@ const {
 
 // Middleware to parse JSON
 app.use(express.json());
+
+// users
+
+app.use('/tours', userRouter);
 
 // ROUTES
 app.use('/tours', tourRouter);
