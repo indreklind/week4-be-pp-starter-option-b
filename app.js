@@ -1,19 +1,24 @@
 const express = require("express");
 const app = express();
 
+const tourRouter = require('./routes/tourRouter');
+
+
 const {
   getAllTours,
   getTourById,
   createTour,
   updateTour,
   deleteTour,
-} = require("./tourController.js"); 
+} = require("./controllers/tourController.js"); 
 
 
 // Middleware to parse JSON
 app.use(express.json());
 
 // ROUTES
+app.use('/tours', tourRouter);
+
 // GET /tours
 app.get("/tours", getAllTours);
 

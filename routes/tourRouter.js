@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllTours } = require('../controllers/tourControllers');
+const { getAllTours } = require('../controllers/tourController.js');
 
 router.get('/', getAllTours);
 
